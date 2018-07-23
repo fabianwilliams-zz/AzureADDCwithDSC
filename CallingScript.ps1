@@ -24,7 +24,7 @@ Login-AzureRmAccount
 # Adjust the 'yournamehere' part of these three strings to
 # something unique for you. Leave the last two characters in each.
 $URI       = 'https://raw.githubusercontent.com/fabianwilliams/AzureADDCwithDSC/master/azuredeploy.json'
-$Location  = 'East US 2'
+$Location  = 'East US'
 $rgname    = 'fabstesteraddcalpharg'
 $saname    = 'fabstesteraddcalphasa'     # Lowercase required
 $addnsName = 'fabstesteraddcalphaad'     # Lowercase required

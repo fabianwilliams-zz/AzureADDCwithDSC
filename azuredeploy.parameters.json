@@ -9,7 +9,7 @@
         "value": "Standard_LRS"
       },
       "location": {
-        "value": "East US 2"
+        "value": "East US"
       },
       "adminUsername": {
         "value": "azureuser"
