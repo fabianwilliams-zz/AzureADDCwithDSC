@@ -1,6 +1,7 @@
 break
 
-# Shout out to @brwilkinson for assistance with some of this.
+# I learned all of this from a PluralSight Course thanks to you guys for 
+# the NFR subscription for MVPs
 
 
 # Install the Azure Resource Manager modules from PowerShell Gallery
@@ -22,11 +23,11 @@ Login-AzureRmAccount
 
 # Adjust the 'yournamehere' part of these three strings to
 # something unique for you. Leave the last two characters in each.
-$URI       = 'https://raw.githubusercontent.com/GoateePFE/AzureRM/master/active-directory-new-domain-with-data/azuredeploy.json'
-$Location  = 'east us'
-$rgname    = 'yournamehererg'
-$saname    = 'yournameheresa'     # Lowercase required
-$addnsName = 'yournameheread'     # Lowercase required
+$URI       = 'https://raw.githubusercontent.com/fabianwilliams/AzureADDCwithDSC/master/azuredeploy.json'
+$Location  = 'East US 2'
+$rgname    = 'fabstesteraddcalpharg'
+$saname    = 'fabstesteraddcalphasa'     # Lowercase required
+$addnsName = 'fabstesteraddcalphaad'     # Lowercase required
 
 # Check that the public dns $addnsName is available
 if (Test-AzureRmDnsAvailability -DomainNameLabel $addnsName -Location $Location)
@@ -39,7 +40,7 @@ New-AzureRmResourceGroup -Name $rgname -Location $Location
 $MyParams = @{
     newStorageAccountName = $saname
     location              = 'East US'
-    domainName            = 'alpineskihouse.com'
+    domainName            = 'adotobtestalpha.com'
     addnsName             = $addnsName
    }
 
@@ -48,7 +49,7 @@ $SplatParams = @{
     TemplateUri             = $URI 
     ResourceGroupName       = $rgname 
     TemplateParameterObject = $MyParams
-    Name                    = 'AlpineSkiHouseForest'
+    Name                    = 'AdotobTestAlphaForest'
    }
 
 # This takes ~30 minutes
@@ -64,7 +65,7 @@ $FQDN = $PublicAddress.DnsSettings.Fqdn
 Start-Process -FilePath mstsc.exe -ArgumentList "/v:$FQDN"
 Start-Process -FilePath mstsc.exe -ArgumentList "/v:$IP"
 
-# Login as:  alpineskihouse\adadministrator
+# Login as:  adotobtestalpha\adadministrator
 # Use the password you supplied at the beginning of the build.
 
 # Explore the Active Directory domain:
