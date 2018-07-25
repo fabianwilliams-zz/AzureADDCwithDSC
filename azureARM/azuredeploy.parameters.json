@@ -27,8 +27,7 @@
         "value": "GEN-UNIQUE"
       },
       "assetLocation": {
-        "value": "https://raw.githubusercontent.com/fabianwilliams/AzureADDCwithDSC/master/azureARM/"
-      }
+        "value": "https://raw.githubusercontent.com/GoateePFE/AzureRM/master/active-directory-new-domain-with-data/"
     }
   }
-  
+}
