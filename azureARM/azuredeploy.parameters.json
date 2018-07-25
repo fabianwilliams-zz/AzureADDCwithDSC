@@ -27,7 +27,7 @@
         "value": "GEN-UNIQUE"
       },
       "assetLocation": {
-        "value": "https://raw.githubusercontent.com/fabianwilliams/AzureADDCwithDSC/"
+        "value": "https://raw.githubusercontent.com/fabianwilliams/AzureADDCwithDSC/master/azureARM/"
       }
     }
   }
