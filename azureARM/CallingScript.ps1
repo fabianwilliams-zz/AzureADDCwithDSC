@@ -21,9 +21,12 @@ Import-Module Azure -Verbose
 # Authenticate to your Azure account
 Login-AzureRmAccount
 
+# GEt a transcript of what is run
+Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
+
 # Adjust the 'yournamehere' part of these three strings to
 # something unique for you. Leave the last two characters in each.
-$URI       = 'https://raw.githubusercontent.com/fabianwilliams/AzureADDCwithDSC/master/azuredeploy.json'
+$URI       = 'https://raw.githubusercontent.com/fabianwilliams/AzureADDCwithDSC/master/azureARM/azuredeploy.json'
 $Location  = 'East US'
 $rgname    = 'fabstesteraddcalpharg'
 $saname    = 'fabstesteraddcalphasa'     # Lowercase required
@@ -77,3 +80,6 @@ Start-Process -FilePath mstsc.exe -ArgumentList "/v:$IP"
 
 # Delete the entire resource group when finished
 Remove-AzureRmResourceGroup -Name $rgname -Force -Verbose
+
+#Stop any Transcripts running
+Stop-Transcript
